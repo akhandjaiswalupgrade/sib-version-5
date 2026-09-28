@@ -1,0 +1,121 @@
+
+/*timeline*/
+.events-details-box
+{
+  display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+ul.timeline::before {
+  content: ' ';
+  background: #9c9696;
+  display: inline-block;
+  position: absolute;
+  left: 18px;
+  width: 2px;
+  height: 100%;
+  z-index: 1;
+  top: 62px;
+}
+
+ul.timeline li.timeline-list {
+  margin: 23px 0;
+  padding-left: 115px;
+  position: relative;
+}
+
+ul.timeline li.timeline-list::before {
+  content: ' ';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #9c9696;
+  top: 34px;
+  left: 3px;
+  width: 31px;
+  height: 31px;
+  z-index: 3;
+}
+
+ul.timeline li.timeline-list::after {
+  content: ' ';
+  background: #9c9696;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  left: 9px;
+  width: 19px;
+  height: 19px;
+  z-index: 4;
+  top: 40px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.update-meta span {
+  color: #838694;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.update-meta span i {
+  color: #5584ff;
+  font-size: 15px;
+  margin-right: 4px;
+}
+
+.fa-calendar-alt:before {
+  content: "\f073";
+}
+
+.update-content h4::before {
+  background: #9c9696;
+  left: -82px;
+  top: 13px;
+  height: 3px;
+}
+
+.left-line::before {
+  content: "";
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 50px;
+  height: 2px;
+  z-index: 1;
+}
+
+.left-line {
+  position: relative;
+}
+
+ul.timeline li.timeline-list:hover::after {
+  background: #5584ff;
+}
+
+/*application process end*/
+
+.light-blue-bg{
+  background: #5584ff;
+  color: white;
+}
