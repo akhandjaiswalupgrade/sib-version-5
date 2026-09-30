@@ -241,6 +241,17 @@ button, input, select, textarea {
   color: transparent;
 }
 
+/* Hero slider lives over photos: light gradient + glow for legibility */
+.hero-slider .gradient-text {
+  background: linear-gradient(115deg, #a8c8ff 0%, #6ea8ff 35%, #5eead4 70%, #fcd34d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.65));
+}
+
 .gradient-gold {
   background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
   -webkit-background-clip: text;
@@ -3299,6 +3310,10 @@ h1, h2, h3, h4, p, li, a, span {
   animation-delay: 0.24s;
 }
 
+.hero-slide.is-active .hero-slide-text > *:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
 @keyframes heroRise {
   from { opacity: 0; transform: translateY(26px); }
   to { opacity: 1; transform: none; }
@@ -3309,13 +3324,25 @@ h1, h2, h3, h4, p, li, a, span {
   z-index: 3;
   left: 0;
   right: 0;
-  bottom: 2.5rem;
+  bottom: 5rem;
+}
+
+.hero-slide.is-clean .hero-slide-inner {
+  display: none;
+}
+
+.hero-slide.is-clean .hero-slide-shade {
+  background: linear-gradient(to top, rgba(6, 13, 38, 0.5), transparent 30%);
+}
+
+.hero-slide.is-clean .hero-slide-shade::after {
+  height: 26%;
 }
 
 .hero-slider-ui-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -3324,6 +3351,11 @@ h1, h2, h3, h4, p, li, a, span {
   display: flex;
   align-items: center;
   gap: 0.9rem;
+  background: rgba(6, 13, 38, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  padding: 0.5rem 0.9rem;
+  backdrop-filter: blur(10px);
 }
 
 .hero-arrow {
@@ -3425,12 +3457,12 @@ h1, h2, h3, h4, p, li, a, span {
   }
 
   .hero-slider-ui {
-    bottom: 1.5rem;
+    bottom: 4.5rem;
   }
 
-  .hero-slider-ui-inner {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero-slider-controls {
+    gap: 0.7rem;
+    padding: 0.4rem 0.7rem;
   }
 
   .hero-arrow {
