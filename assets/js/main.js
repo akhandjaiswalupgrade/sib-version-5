@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEligibilityChecker();
   initBackToTop();
   initWhySlider();
+  initHeroSlider();
   highlightActiveNav();
 });
 
@@ -363,6 +364,91 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryFilter();
   initLightbox();
 });
+
+/* --- Homepage Hero Image Slider (index-slider.html) --- */
+function initHeroSlider() {
+  const slider = document.querySelector('#heroSlider');
+  if (!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+  const dots = Array.from(slider.querySelectorAll('.hero-dot'));
+  const prevBtn = slider.querySelector('.hero-prev');
+  const nextBtn = slider.querySelector('.hero-next');
+  const counter = slider.querySelector('.hero-counter');
+  const bar = slider.querySelector('#heroProgress');
+  if (!slides.length) return;
+
+  const AUTOPLAY_MS = 5000;
+  let index = 0;
+  let timer = null;
+  let touchX = null;
+
+  const pad = (n) => String(n).padStart(2, '0');
+
+  const paintBar = () => {
+    if (!bar) return;
+    bar.classList.remove('playing');
+    void bar.offsetWidth;
+    bar.classList.add('playing');
+  };
+
+  const go = (n) => {
+    index = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === index));
+    dots.forEach((d, k) => d.classList.toggle('is-active', k === index));
+    if (counter) counter.textContent = pad(index + 1) + ' / ' + pad(slides.length);
+    paintBar();
+  };
+
+  const stop = () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+    if (bar) bar.classList.remove('playing');
+  };
+
+  const start = () => {
+    stop();
+    if (document.hidden) return;
+    timer = setInterval(() => go(index + 1), AUTOPLAY_MS);
+    paintBar();
+  };
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { go(index - 1); start(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { go(index + 1); start(); });
+
+  dots.forEach((d, k) => d.addEventListener('click', () => { go(k); start(); }));
+
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+
+  slider.addEventListener('touchstart', (e) => {
+    touchX = e.touches[0].clientX;
+    stop();
+  }, { passive: true });
+
+  slider.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+    touchX = null;
+    start();
+  }, { passive: true });
+
+  slider.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { go(index + 1); start(); }
+    else if (e.key === 'ArrowLeft') { go(index - 1); start(); }
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
+
+  go(0);
+  start();
+}
 
 /* --- Why SIB-SHInE Story Slider (index.html) --- */
 function initWhySlider() {
