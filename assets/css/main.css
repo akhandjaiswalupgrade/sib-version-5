@@ -3519,6 +3519,7 @@ h1, h2, h3, h4, p, li, a, span {
 
   .hero-slide-sub {
     font-size: 0.95rem;
+    line-height: 1.75;
   }
 
   .hero-slide-text .hero-cta-group,
