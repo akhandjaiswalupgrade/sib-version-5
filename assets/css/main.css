@@ -3473,8 +3473,8 @@ h1, h2, h3, h4, p, li, a, span {
 
 @media (max-width: 768px) {
   .hero-slider {
-    min-height: 560px;
-    height: 92svh;
+    min-height: 0;
+    height: calc(100vw * 1050 / 2240 + 26rem);
     max-height: none;
   }
 
