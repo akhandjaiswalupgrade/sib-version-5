@@ -3342,9 +3342,29 @@ h1, h2, h3, h4, p, li, a, span {
 .hero-slider-ui-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
+}
+
+.hero-bar-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-bar-ctas {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-slide-text .hero-cta-group {
+    display: none;
+  }
 }
 
 .hero-slider-controls {
@@ -3483,7 +3503,7 @@ h1, h2, h3, h4, p, li, a, span {
 
   .hero-slide-bg {
     background-size: contain;
-    background-position: center 24%;
+    background-position: center top;
     background-color: var(--color-navy-950);
     animation: none;
     transform: none;
@@ -3526,6 +3546,11 @@ h1, h2, h3, h4, p, li, a, span {
 
   .hero-slider-ui-inner {
     justify-content: center;
+  }
+
+  .hero-slide-caption {
+    top: calc(100vw / 3 + 1rem);
+    bottom: auto;
   }
 
   .hero-slider-controls {
