@@ -3529,7 +3529,8 @@ h1, h2, h3, h4, p, li, a, span {
     z-index: 2;
     left: 0;
     right: 0;
-    bottom: 9rem;
+    top: calc(100vw / 3 + 0.75rem);
+    bottom: auto;
   }
 
   .hero-static-text {
@@ -3549,18 +3550,20 @@ h1, h2, h3, h4, p, li, a, span {
     font-size: 0.95rem;
   }
 
-  .hero-slide-text .hero-cta-group {
+  .hero-slide-text .hero-cta-group,
+  .hero-static-text .hero-cta-group {
     flex-direction: row;
     align-items: stretch;
-    gap: 0.625rem;
+    gap: 0.5rem;
   }
 
-  .hero-slide-text .hero-cta-group .btn {
+  .hero-slide-text .hero-cta-group .btn,
+  .hero-static-text .hero-cta-group .btn {
     flex: 1 1 0;
     justify-content: center;
     white-space: nowrap;
-    padding: 0.7rem 0.5rem;
-    font-size: 0.85rem;
+    padding: 0.65rem 0.25rem;
+    font-size: 0.8rem;
   }
 
   .hero-slider-ui {
