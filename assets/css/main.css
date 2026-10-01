@@ -3467,35 +3467,6 @@ h1, h2, h3, h4, p, li, a, span {
   to { width: 100%; }
 }
 
-.hero-slide-caption {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  bottom: 9.5rem;
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hero-slide-caption span {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #eef2f7;
-  background: rgba(6, 13, 38, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 9999px;
-  padding: 0.45rem 1.1rem;
-  backdrop-filter: blur(10px);
-  white-space: nowrap;
-}
-
-.hero-slide.is-active .hero-slide-caption {
-  animation: heroRise 0.7s cubic-bezier(0.22, 0.8, 0.3, 1) 0.3s forwards;
-}
-
 .hero-static-wrap {
   display: none;
 }
@@ -3574,10 +3545,6 @@ h1, h2, h3, h4, p, li, a, span {
     justify-content: center;
   }
 
-  .hero-slide-caption {
-    display: none;
-  }
-
   .hero-slider-controls {
     gap: 0.7rem;
     padding: 0.4rem 0.7rem;
@@ -3588,12 +3555,4 @@ h1, h2, h3, h4, p, li, a, span {
     height: 42px;
   }
 
-  .hero-slide-caption {
-    bottom: 8.75rem;
-  }
-
-  .hero-slide-caption span {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.9rem;
-  }
 }
