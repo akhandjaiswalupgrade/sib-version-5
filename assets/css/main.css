@@ -3500,7 +3500,7 @@ h1, h2, h3, h4, p, li, a, span {
     z-index: 2;
     left: 0;
     right: 0;
-    top: calc(100vw / 3 + 0.75rem);
+    top: calc(100vw * 1050 / 2240 + 0.75rem);
     bottom: auto;
   }
 
