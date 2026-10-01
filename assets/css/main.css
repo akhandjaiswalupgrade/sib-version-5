@@ -3534,12 +3534,17 @@ h1, h2, h3, h4, p, li, a, span {
   }
 
   .hero-slide-text .hero-cta-group {
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
+    gap: 0.625rem;
   }
 
   .hero-slide-text .hero-cta-group .btn {
+    flex: 1 1 0;
     justify-content: center;
+    white-space: nowrap;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.85rem;
   }
 
   .hero-slider-ui {
