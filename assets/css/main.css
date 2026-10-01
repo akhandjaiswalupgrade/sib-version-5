@@ -3496,6 +3496,10 @@ h1, h2, h3, h4, p, li, a, span {
   animation: heroRise 0.7s cubic-bezier(0.22, 0.8, 0.3, 1) 0.3s forwards;
 }
 
+.hero-static-wrap {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .hero-slider {
     min-height: 560px;
@@ -3516,8 +3520,20 @@ h1, h2, h3, h4, p, li, a, span {
   }
 
   .hero-slide-inner {
-    align-items: flex-end;
-    padding-bottom: 10.5rem;
+    display: none;
+  }
+
+  .hero-static-wrap {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 9rem;
+  }
+
+  .hero-static-text {
+    max-width: 640px;
   }
 
   .hero-slide-kicker {
