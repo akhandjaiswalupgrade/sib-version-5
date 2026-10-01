@@ -1,3 +1,8 @@
 Thumbs.db
 .DS_Store
 *.log
+
+# local preview screenshots, never commit
+desktop_wide*.png
+mobile_preview*.png
+preview.png
