@@ -3492,7 +3492,7 @@ h1, h2, h3, h4, p, li, a, span {
 @media (max-width: 768px) {
   .hero-slider {
     min-height: 0;
-    height: calc(100vw * 1050 / 2240 + 32rem);
+    height: calc(100vw * 1050 / 2240 + 33.5rem);
     max-height: none;
   }
 
@@ -3547,6 +3547,7 @@ h1, h2, h3, h4, p, li, a, span {
     flex-direction: row;
     align-items: stretch;
     gap: 0.5rem;
+    margin-top: 1.5rem;
   }
 
   .hero-slide-text .hero-cta-group .btn,
